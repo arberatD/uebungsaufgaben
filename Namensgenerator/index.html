@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zufallsgenerator</title>
+    <style>
+        body {
+            background-color: #083347;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            color: #F2F2F2;
+        }
+
+        h1 {
+            color: #7bdcb5;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: #F2F2F2;
+            transition: color 0.3s;
+        }
+
+        button:hover {
+            color: #7bdcb5;
+        }
+
+        #uNameInput {
+            font-size: 40px;
+            color: #083347;
+            background-color: #FFFFFF;
+            border: none;
+            outline: none;
+            cursor: default;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zufallsgenerator</h1>
+    <button onclick="generate()">Klicke hier und wähle einen Schüler aus</button>
+    <div>
+        <input id="uNameInput" readonly>
+    </div>
+
+    <script>
+        var nameList = ['Flamur', 'Abi', 'Enrico', 'Dennis'];
+
+        function generate() {
+            var finalName = nameList[Math.floor(Math.random() * nameList.length)];
+            document.getElementById('uNameInput').value = finalName;
+        };
+    </script>
+</body>
+</html>
