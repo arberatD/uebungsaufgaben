@@ -1,0 +1,32 @@
+<!-- Erstelle ein HTML Dokument mit einem Absatz und einem Button. Das drücken des Buttons soll die sichtbarkeit (element.style.display = ‘none’/’block’) des Absatzes ein- bzw ausstellen. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aufgabe1</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button id="button" type="button" onclick="toggleText()">Sichtbarkeit</button>
+    <div>
+        <p id="paragraph">Das ist Text, der ein- und ausgeblendet werden kann!</p>
+    </div>
+</body>
+
+<script>
+    const button = document.querySelector('#button');
+    const paragraph = document.querySelector("#paragraph");
+    
+    function toggleText() {
+        if (paragraph.style.display === "none") {
+            paragraph.style.display = "block"; // Setzen Sie den Absatz auf sichtbar (block)
+        } else {
+            paragraph.style.display = "none"; // Setzen Sie den Absatz auf unsichtbar
+        }
+    }
+</script>
+</html>
+
+
+
