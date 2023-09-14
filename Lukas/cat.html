@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katzenbilder</title>
+</head>
+<body>
+    <h1>Meine Gallerie</h1>
+    <form>
+        <label for="text">Die Katze sagt:</label>
+        <input type="text" id="text">
+    </form>
+    <button onclick="insertPicture()">Bild hinzufügen</button>
+    <button onclick="deleteAll()">Alle löschen</button>
+    <div id="imagecontainer">
+        <!--Hier kommen die Bilder rein--> 
+    </div>
+</body>
+
+<script>
+    function insertPicture(){
+        //Neues Element erstellen
+        const newImage = document.createElement("img")
+        const text = document.querySelector("#text").value
+
+        //Attribute setzen
+        if(text === ""){
+            newImage.src = "https://cataas.com/cat"
+        } else {
+            newImage.src = "https://cataas.com/cat/says/" + text
+        }
+
+        newImage.alt = "Zufälliges Katzenbild"
+
+        //In Dokument einfügen
+        const imagecontainer = document.querySelector("#imagecontainer")
+        imagecontainer.appendChild(newImage)
+    }
+
+    function deleteAll(){
+        document.querySelector("#imagecontainer").innerHTML = ""
+    }
+</script>
+</html>
